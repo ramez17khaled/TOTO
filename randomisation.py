@@ -1,18 +1,36 @@
-import pandas as pd
+import os
 import random
 import tkinter as tk
-from tkinter import filedialog, simpledialog, messagebox
-import os
+from tkinter import filedialog, messagebox, simpledialog
+import pandas as pd
 import json
 
-# Function to shuffle the table and add a new index while preserving the original sample column
 def shuffle_table_with_new_index(data):
+    """
+    Shuffle the table and add a new index while preserving the original sample column.
+
+    Args:
+    - data (list of lists): The input data representing a table metabolite in columns.
+
+    Returns:
+    - list of tuples: Shuffled table with new index added.
+      Each tuple contains an index and a row of shuffled data.
+    """
     indexed_data = list(enumerate(data))  # Keep original index with the data
     random.shuffle(indexed_data)  # Shuffle the table
     return indexed_data
 
-# Function to recover the original order using the preserved original index
 def recover_original_order(shuffled_data, original_order):
+    """
+    Recover the original order using the preserved original index.
+
+    Args:
+    - shuffled_data (list of tuples): Shuffled data where each tuple contains an index and a row of shuffled data.
+    - original_order (dict): Dictionary mapping original indices (as strings) to their respective rows.
+
+    Returns:
+    - list of lists: Recovered table in the original order.
+    """
     recovered_table = []
     for shuffled_row in shuffled_data:
         original_index = shuffled_row[0]  # Get the original index from the first element
@@ -22,9 +40,16 @@ def recover_original_order(shuffled_data, original_order):
 
     return recovered_table
 
-
-# Function to handle GUI interaction, shuffle data, save shuffled data, and save original order indices in JSON
 def gui_interaction():
+    """
+    Handle GUI interaction, shuffle data, save shuffled data,
+    and save original order indices in JSON.
+
+    Uses tkinter for GUI dialogs.
+
+    Returns:
+    - None
+    """
     # Create a tkinter root window
     root = tk.Tk()
     root.withdraw()  # Hide the main window
@@ -135,9 +160,10 @@ def gui_interaction():
     # Destroy the tkinter root window after processing
     root.destroy()
 
-# Example usage with GUI interaction
 def main():
-    # Call GUI interaction function to handle Excel file selection and sheet name input
+    """
+    Main function to initiate GUI interaction for Excel file selection and sheet name input.
+    """
     gui_interaction()
 
 if __name__ == "__main__":
