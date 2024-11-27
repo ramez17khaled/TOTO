@@ -1,4 +1,8 @@
 """
+Author: Ramiz KHALED <ramiz.khaled@inserm.fr>
+Infrastructure: MetaToul, plateau Lipidomique
+
+### Purpose:
 This processe fusion several MSP files, it updates data in a MSP file (`PRECURSORMZ`, `RETENTIONTIME`, `PRECURSORTYPE`, and `IONMODE`) based on provided table data MSP data bases. 
 It checks if a compound name exists in an initial MSP file, updates the existing entry with information from a second MSP file, 
 or creates a new entry if the compound name is not found.
