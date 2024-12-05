@@ -1,4 +1,10 @@
 """
+Author: [Ramiz KHALED] <ramiz.khaled@inserm.fr>
+Infrastructure: [MetaToul/MetaboHub]
+Purpose: ABN DB creation.
+
+Overview:
+---------
 This Python script calculates the probabilities of M+1, M+2, and M+3 isotope peaks for a given molecular formula
 based on the natural isotopic abundances of elements. It leverages mathematical formulas and combinatorial 
 calculations to determine the contributions of heavy isotopes to molecular mass spectrometry analysis.
