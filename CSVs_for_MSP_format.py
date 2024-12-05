@@ -1,6 +1,6 @@
 """
-Author: [Your Name]
-Infrastructure: [Your Lab/Institution]
+Author: [Ramiz KHALED] <ramiz.khaled@inserm.fr>
+Infrastructure: [MetaToul/MetaboHub]
 Purpose: This script processes mass spectrometry (MS) data and converts it into the MSP (Mass Spectrometry Power) format.
 
 Overview:
